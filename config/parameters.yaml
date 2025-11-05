@@ -1,0 +1,14 @@
+data_sources:
+  price_data:
+    path: "data/raw/AAPL.US_M5.xlsx"
+    datetime_col: "datetime"
+    price_cols: ["open", "high", "low", "close", "volume"]
+    
+  news_data:
+    path: "data/raw/apple_news_data.xlsx" 
+    datetime_col: "date"
+    sentiment_cols: ["sentiment_neg", "sentiment_neu", "sentiment_pos"]
+
+output:
+  save_cleaned_data: true
+  processed_data_path: "data/processed/"

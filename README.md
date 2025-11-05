@@ -17,14 +17,13 @@ This project builds a hybrid deep learning model that predicts 5-minute closing 
 
 ## 📁 Project Structure
 cis545_quant/
-<!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
-
 ├── data/ # Data storage
 │ ├── raw/ # Raw datasets
 │ └── processed/ # Processed features
 ├── src/
 │ ├── data_loader.py # Data loading and preprocessing
 │ ├── feature_engineer.py # Feature engineering pipeline
+│ ├── config_loader.py # config loading
 │ ├── model.py # Model architecture definitions
 │ ├── train.py # Training procedures
 │ └── backtest.py # Strategy backtesting
@@ -35,6 +34,7 @@ cis545_quant/
 ├── config/ # Configuration files
 │ └── parameters.yaml # Model and data parameters
 ├── tests/ # Unit tests
+├── requirements.txt # Python dependencies
 └── README.md # Project documentation
 
 
