@@ -19,23 +19,23 @@ This project builds a hybrid deep learning model that predicts 5-minute closing 
 cis545_quant/
 <!-- @import "[TOC]" {cmd="toc" depthFrom=1 depthTo=6 orderedList=false} -->
 
-├── data/ # Data storage
-│ ├── raw/ # Raw datasets
-│ └── processed/ # Processed features
-├── src/
-│ ├── data_loader.py # Data loading and preprocessing
-│ ├── feature_engineer.py # Feature engineering pipeline
-│ ├── model.py # Model architecture definitions
-│ ├── train.py # Training procedures
-│ └── backtest.py # Strategy backtesting
-├── notebooks/ # Jupyter notebooks
-│ ├── 01_EDA.ipynb # Exploratory Data Analysis
-│ ├── 02_Feature_Engineering.ipynb
-│ └── 03_Model_Training.ipynb
-├── config/ # Configuration files
-│ └── parameters.yaml # Model and data parameters
-├── tests/ # Unit tests
-└── README.md # Project documentation
+├── data/ # Data storage  
+│ ├── raw/ # Raw datasets  
+│ └── processed/ # Processed features  
+├── src/  
+│ ├── data_loader.py # Data loading and preprocessing  
+│ ├── feature_engineer.py # Feature engineering pipeline  
+│ ├── model.py # Model architecture definitions  
+│ ├── train.py # Training procedures  
+│ └── backtest.py # Strategy backtesting  
+├── notebooks/ # Jupyter notebooks  
+│ ├── 01_EDA.ipynb # Exploratory Data Analysis  
+│ ├── 02_Feature_Engineering.ipynb  
+│ └── 03_Model_Training.ipynb  
+├── config/ # Configuration files  
+│ └── parameters.yaml # Model and data parameters  
+├── tests/ # Unit tests  
+└── README.md # Project documentation  
 
 
 ## 🗓 Project Timeline & Roadmap
