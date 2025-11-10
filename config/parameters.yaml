@@ -1,3 +1,4 @@
+# config/parameters.yaml
 data_sources:
   price_data:
     path: "data/raw/AAPL.US_M5.xlsx"
@@ -8,6 +9,11 @@ data_sources:
     path: "data/raw/apple_news_data.xlsx" 
     datetime_col: "date"
     sentiment_cols: ["sentiment_neg", "sentiment_neu", "sentiment_pos"]
+    
+  fundamental_data:
+    path: "data/raw/iw0erafaqkjcbrw6.xlsx"
+    date_cols: ["adate", "qdate", "public_date"]
+    value_cols: ["CAPEI", "bm", "evm", "pe_op_basic", "pe_op_dil", "roa", "roe"]
 
 output:
   save_cleaned_data: true
