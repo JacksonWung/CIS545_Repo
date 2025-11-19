@@ -42,6 +42,16 @@ class DataLoader:
         print(f"News data shape: {df.shape}")
         return df
     
+    def load_news_data(self):
+        """Load news data only - no cleaning"""
+        news_config = self.config.get('data_sources.news_Data')
+        data_path = os.path.join(self.project_root, news_config['path'])
+        
+        print(f"Loading news data from: {data_path}")
+        df = pd.read_excel(data_path, engine='openpyxl')
+        print(f"News data shape: {df.shape}")
+        return df
+    
     def _load_fundamental_data(self):
         """Load fundamental data"""
         fundamental_config = self.config.get('data_sources.fundamental_data')

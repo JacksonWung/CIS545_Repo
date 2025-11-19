@@ -9,7 +9,12 @@ data_sources:
     path: "data/raw/apple_news_data.xlsx" 
     datetime_col: "date"
     sentiment_cols: ["sentiment_neg", "sentiment_neu", "sentiment_pos"]
-    
+
+  news_Data:
+    path: "data/processed/apple_news_data.csv" 
+    datetime_col: "date"
+    sentiment_cols: ["sentiment_neg", "sentiment_neu", "sentiment_pos"] 
+     
   fundamental_data:
     path: "data/raw/iw0erafaqkjcbrw6.xlsx"
     date_cols: ["adate", "qdate", "public_date"]
