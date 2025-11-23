@@ -2,22 +2,6 @@ import torch
 import torch.nn as nn
 import numpy as np
 
-
-# ----------------------------
-# Create sequences
-# ----------------------------
-def create_sequences(data, seq_length):
-    sequences = []
-    labels = []
-    for i in range(len(data) - seq_length):
-        sequences.append(data[i:i+seq_length])
-        labels.append(data[i+seq_length])
-    return np.array(sequences), np.array(labels)
-
-
-# ----------------------------
-# LSTM Model
-# ----------------------------
 class LSTMModel(nn.Module):
     def __init__(self, input_size=1, hidden_size=50, num_layers=2, output_size=1):
         super(LSTMModel, self).__init__()
