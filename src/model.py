@@ -3,11 +3,12 @@ import torch.nn as nn
 import numpy as np
 
 class LSTMModel(nn.Module):
-    def __init__(self, input_size=1, hidden_size=50, num_layers=2, output_size=1):
+    def __init__(self, input_size=1, hidden_size=50, num_layers=2, output_size=1, dropout=0.2):
         super(LSTMModel, self).__init__()
         self.hidden_size = hidden_size
         self.num_layers = num_layers
-        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True)
+        # dropout only works if num_layers > 1
+        self.lstm = nn.LSTM(input_size, hidden_size, num_layers, batch_first=True, dropout=dropout)
         self.fc = nn.Linear(hidden_size, output_size)
 
     def forward(self, x):
@@ -16,3 +17,22 @@ class LSTMModel(nn.Module):
         out, _ = self.lstm(x, (h0, c0))
         out = self.fc(out[:, -1, :])
         return out
+
+class MLPModel(nn.Module):
+    def __init__(self, input_size, hidden_size1=64, hidden_size2=32, output_size=1):
+        """
+        MLP Model to combine LSTM output and exogenous features.
+        Args:
+            input_size: Dimension of LSTM output (1) + number of exogenous features.
+        """
+        super(MLPModel, self).__init__()
+        self.model = nn.Sequential(
+            nn.Linear(input_size, hidden_size1),
+            nn.ReLU(),
+            nn.Linear(hidden_size1, hidden_size2),
+            nn.ReLU(),
+            nn.Linear(hidden_size2, output_size)
+        )
+
+    def forward(self, x):
+        return self.model(x)
